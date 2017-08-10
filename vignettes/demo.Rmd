@@ -1,0 +1,39 @@
+---
+title: "Using Daymet, Random Forest, and USGS streamflow data for daily hydrograph simulation"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+The function _getClimDat()_ can be used to get daily climate data from [Daymet](https://daymet.ornl.gov/overview.html). Climate variables returned from Daymet include;
+
+variable              | description
+----------------------|----------------------------------------------------------------------------
+prcp                  | Daily total precipitation in millimeters per day
+srad                  | Incident shortwave radiation flux density in watts per square meter
+swe                   | Snow water equivalent in kilograms per square meter
+tmax                  | Daily maximum 2-meter air temperature in degrees Celsius
+tmin                  | Daily minimum 2-meter air temperature in degrees Celsius
+vp                    | Water vapor pressure in pascals
+rad (derived)         | Daily total radiation (MJ/m^2^/day)
+harET0 (derived)      | Evapotranspiration from the Hargreaves Equation
+
+In order to retrieve climate data for the locations of interest, one or more pairs of lat/long coordinates are needed. For this example, we will use three streamgages on the Buffalo River in AR. Two gages will be used to predict daily streamflow data for one gage and the results will be compared to observed streamflow data. One point will be used to get climate data for the basins, the basin centroid. In larger basins, multiple points may be considered.
+
+```{r}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
