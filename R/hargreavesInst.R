@@ -10,7 +10,7 @@ hargreavesInst <- function (tmin, tmax, times, pre, lat) {
   
   Tr <- ifelse(Tr < 0, 0, Tr) 
   
-  J <- times$yday + 1 
+  J <- lubridate::yday(times) + 1 
   
   delta <- 0.409 * sin(0.0172 * J - 1.39) 
   
