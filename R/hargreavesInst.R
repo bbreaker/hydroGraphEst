@@ -38,7 +38,7 @@ hargreavesInst <- function (tmin, tmax, times, pre, lat) {
   
   ET0 <- ifelse(ET0 < 0, 0, ET0) 
   
-  ET0 <- ET0*forecast::monthDays(times)
+  ET0 <- ET0 * forecast::monthDays(times)
   
   return(ET0) 
   
